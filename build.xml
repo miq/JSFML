@@ -15,9 +15,9 @@
 	
 	<!-- SFML properties -->
 	<property name="sfml.version" value="2.2" />
-	<property name="sfml.bin" location="./sfml/bin" />
-	<property name="sfml.lib" location="./sfml/lib" />
-	<property name="sfml.include" location="./sfml/include" />
+	<property name="sfml.bin" location="./sfml-build/lib" />
+	<property name="sfml.lib" location="./sfml-build/lib" />
+	<property name="sfml.include" location="./SFML/include" />
 	
 	<!-- Java properties -->
 	<property name="java.src" location="./src/java" />
@@ -193,7 +193,7 @@
 			<arg value="-I${sfml.include}" />
 			<arg value="-I${env.JAVA_HOME}/include" />
 			<arg value="-I${env.JAVA_HOME}/include/linux" />
-			<arg value="-L${sfml.bin}/${arch}" />
+			<arg value="-L${sfml.bin}" />
 			<arg value="-shared" />
 			<arg value="-fPIC" />
 			<arg value="-o${cpp.out}/${arch}/lib${jsfml.bin}.so" />
@@ -202,7 +202,7 @@
 		</exec>
 
 		<copy todir="${cpp.out}/${arch}">
-			<fileset dir="${sfml.bin}/${arch}" includes="*.so" />
+			<fileset dir="${sfml.bin}" includes="*.so" />
 		</copy>
 		
 		<checksum>

@@ -15,3 +15,8 @@ jsfml-build-all
 jsfml-old
 
 /art/JSFML.asta.bak
+
+# Ignore gradle generated files
+build/
+/.gradle
+
